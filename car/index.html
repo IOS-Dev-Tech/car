@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <title>Site Önizleme Platformu</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="description" content="Modern site önizleme platformu">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Ana İçerik -->
+    <main class="main-container">
+        <!-- İframe Alanı -->
+        <div class="iframe-container">
+            <iframe id="iframe-view" src="https://demo.templatesjungle.com/limo/" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <!-- Kontrol Paneli -->
+        <div id="control-panel" class="control-panel">
+            <div class="panel-header">
+                <h2>Görüntüleme Seçenekleri</h2>
+                <button id="close-panel" class="btn-close"><i class="fas fa-times"></i></button>
+            </div>
+            
+            <div class="panel-section">
+                <h3>Cihaz Seçimi</h3>
+                <div class="device-buttons">
+                    <button data-device="desktop" class="device-btn active"><i class="fas fa-desktop"></i> Masaüstü</button>
+                    <button data-device="laptop" class="device-btn"><i class="fas fa-laptop"></i> Dizüstü</button>
+                    <button data-device="tablet" class="device-btn"><i class="fas fa-tablet-alt"></i> Tablet</button>
+                    <button data-device="mobile" class="device-btn"><i class="fas fa-mobile-alt"></i> Mobil</button>
+                </div>
+            </div>
+            
+            <div class="panel-section">
+                <h3>Şablon Seçimi</h3>
+                <select id="template-selector" class="template-selector">
+                    <option value="https://demo.templatesjungle.com/limo/" data-product="https://templatesjungle.gumroad.com/l/limo-limousine-and-car-rental-free-html-website-template">Limo - Araç Kiralama</option>
+                    <option value="https://demo.templatesjungle.com/baker/" data-product="https://templatesjungle.gumroad.com/l/baker-bakery-free-html-website-template">Baker - Fırın</option>
+                    <option value="https://demo.templatesjungle.com/foodie/" data-product="https://templatesjungle.gumroad.com/l/foodie-restaurant-free-html-website-template">Foodie - Restoran</option>
+                    <option value="https://demo.templatesjungle.com/digimark/" data-product="https://templatesjungle.gumroad.com/l/digimark-digital-marketing-free-html-website-template">Digimark - Dijital Pazarlama</option>
+                </select>
+            </div>
+            
+            <div class="panel-section">
+                <h3>Ekstra Seçenekler</h3>
+                <div class="options-container">
+                    <div class="option">
+                        <label for="grid-toggle">Izgara Göster</label>
+                        <input type="checkbox" id="grid-toggle">
+                    </div>
+                    <div class="option">
+                        <label for="dark-mode">Koyu Tema</label>
+                        <input type="checkbox" id="dark-mode">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="panel-footer">
+                <a id="product-link" href="https://templatesjungle.gumroad.com/l/limo-limousine-and-car-rental-free-html-website-template" class="btn-buy" target="_blank">
+                    <i class="fas fa-shopping-cart"></i> Şimdi Satın Al
+                </a>
+                <div class="screen-size">
+                    <span id="current-size">1920 x 1080</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Kenar Araç Çubuğu -->
+        <div class="sidebar">
+            <button id="toggle-panel" class="sidebar-btn">
+                <i class="fas fa-cog"></i>
+                <span class="tooltip">Ayarlar</span>
+            </button>
+            <button id="refresh-btn" class="sidebar-btn">
+                <i class="fas fa-sync-alt"></i>
+                <span class="tooltip">Yenile</span>
+            </button>
+            <button id="code-btn" class="sidebar-btn">
+                <i class="fas fa-code"></i>
+                <span class="tooltip">Kaynak Kod</span>
+            </button>
+            <button id="fullscreen-btn" class="sidebar-btn">
+                <i class="fas fa-expand"></i>
+                <span class="tooltip">Tam Ekran</span>
+            </button>
+        </div>
+    </main>
+
+    <!-- Kod Önizleme Modal -->
+    <div id="code-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Kaynak Kod</h2>
+                <button class="close-modal"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="code-tabs">
+                    <button class="tab-btn active" data-tab="html">HTML</button>
+                    <button class="tab-btn" data-tab="css">CSS</button>
+                    <button class="tab-btn" data-tab="js">JavaScript</button>
+                </div>
+                <div class="code-content">
+                    <pre id="code-display">Yükleniyor...</pre>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="copy-code" class="btn-copy">Kopyala</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Yükleniyor Göstergesi -->
+    <div id="loading-overlay">
+        <div class="spinner"></div>
+        <p>Yükleniyor...</p>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>            
